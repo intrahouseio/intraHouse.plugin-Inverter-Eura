@@ -1,0 +1,6 @@
+{
+    "id":"ieura",
+    "description":"Eura E1000 inverter RS485-net - TCP client via MOXA",
+    "cross":true,
+	"version":"0.0.2"
+}

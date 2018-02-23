@@ -1,0 +1,43 @@
+{
+  "name": "ieura",
+  "description":"Eura E1000 inverter RS485-net - TCP client via MOXA",
+  "module": "ieura.js",
+  "single": 0,
+
+  "params": [
+    {
+      "name": "host",
+      "note": "IP узла",
+      "type": "string",
+      "val": "192.168.0.250"
+    },
+    {
+      "name": "port",
+      "note": "Порт узла",
+      "type": "number",
+      "val": "4001"
+    }
+  ],
+
+  "chpattern": [
+    { "name": "desc", "note": "Type", "type": "string", "disabled": "desc" }
+  ],
+
+  "chdefault": {
+    "chan": "1",
+    "desc": "INV"
+  },
+
+  "genrules": {
+    "INV": {
+      "type": "520",
+      "cl": "ActorA",
+      "ext": [
+        { "name": "volt", "note": "Напряжение", "type": "number", "val": 0 },
+        { "name": "current", "note": "Ток", "type": "number", "val": 0 }
+      ]
+    }
+  },
+
+  "actions": [{}]
+}
