@@ -99,7 +99,6 @@ function parseMessageFromServer(message) {
 
 // data = [{id:adr, command:on/off/set, value:1}]
 function doAct(data) {
-    logger.log('doAct start', 'command');
   if (!data || !util.isArray(data) || data.length <= 0) return;
   
   if (step < 3) {
@@ -109,8 +108,6 @@ function doAct(data) {
 
   data.forEach(item => {
     if (item.id && item.command) {
-
-      // Передать команду
       agent.doCommand(item);
 
       // и на сервер передать что сделали? или придет самотеком?

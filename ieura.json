@@ -1,6 +1,6 @@
 {
   "name": "ieura",
-  "description":"Eura E1000 inverter RS485-net - TCP client via MOXA",
+  "description": "Eura E1000 inverter RS485-net - TCP client via MOXA",
   "module": "ieura.js",
   "single": 0,
 
@@ -20,11 +20,16 @@
   ],
 
   "chpattern": [
-    { "name": "desc", "note": "Type", "type": "string", "disabled": "desc" }
+    {
+      "name": "desc",
+      "note": "Type",
+      "type": "droplist",
+      "data": [{ "id": "INV", "name": "Частотник" },{ "id": "ELC", "name": "Ток" },{ "id": "ELV", "name": "Напряжение" }]
+    }
   ],
 
   "chdefault": {
-    "chan": "1",
+    "chan": "inv_1",
     "desc": "INV"
   },
 
@@ -33,9 +38,22 @@
       "type": "520",
       "cl": "ActorA",
       "ext": [
-        { "name": "volt", "note": "Напряжение", "type": "number", "val": 0 },
-        { "name": "current", "note": "Ток", "type": "number", "val": 0 }
+        { "name": "current", "note": "Ток", "type": "number", "op": "r" },
+        { "name": "volt", "note": "Напряжение", "type": "number", "op": "r" },
+
+        { "name": "ratio", "note": "Отношение", "type": "number", "op": "r" },
+        { "name": "errstr", "note": "Ошибка", "type": "string", "op": "r" }
       ]
+    },
+
+    "ELC": {
+      "type": "200",
+      "cl": "SensorA"
+    },
+
+    "ELV": {
+      "type": "200",
+      "cl": "SensorA"
     }
   },
 
