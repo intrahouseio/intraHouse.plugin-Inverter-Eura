@@ -37,6 +37,10 @@
     "INV": {
       "type": "520",
       "cl": "ActorA",
+      "calc":"Math.round(value/100*60/2)",
+      "calc_out":"Math.round(value*100/60/2)",
+
+
       "ext": [
         { "name": "current", "note": "Ток", "type": "number", "op": "r" },
         { "name": "volt", "note": "Напряжение", "type": "number", "op": "r" },
