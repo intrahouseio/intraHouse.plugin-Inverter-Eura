@@ -37,9 +37,8 @@
     "INV": {
       "type": "520",
       "cl": "ActorA",
-      "calc":"Math.round(value/100*60/2)",
-      "calc_out":"Math.round(value*100/60/2)",
-
+      "calc":"Math.round(60*(value/100)/(2*1))",
+      "calc_out":"Math.round(value*100/(60/(2*1)))",
 
       "ext": [
         { "name": "current", "note": "Ток", "type": "number", "op": "r" },
