@@ -41,10 +41,9 @@
       "calc_out":"Math.round(value*100/(60/(2*1)))",
 
       "ext": [
-        { "name": "current", "note": "Ток", "type": "number", "op": "r" },
-        { "name": "volt", "note": "Напряжение", "type": "number", "op": "r" },
+        { "name": "current", "note": "Ток", "type": "number", "op": "r", "mu": "A" },
+        { "name": "volt", "note": "Напряжение", "type": "number", "op": "r", "mu": "V" },
 
-        { "name": "ratio", "note": "Отношение", "type": "number", "op": "r" },
         { "name": "errstr", "note": "Ошибка", "type": "string", "op": "r" }
       ]
     },
